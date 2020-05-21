@@ -2,7 +2,7 @@
 Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
-def single_number(arr):
+def single_number_day1(arr):
     # Your code here
     list_of_nums = {}
     for i in range(len(arr)):
@@ -13,6 +13,12 @@ def single_number(arr):
     for entry in list_of_nums:
         if list_of_nums[entry] == 1:
             return entry
+
+def single_number(arr):
+    arr.sort()
+    for i in range(0, len(arr),2):
+        if arr[i] + arr[i+1] - arr[i] != arr[i]:
+            return arr[i]
 
 
 if __name__ == '__main__':
