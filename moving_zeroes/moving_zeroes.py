@@ -2,7 +2,7 @@
 Input: a List of integers
 Returns: a List of integers
 '''
-def moving_zeroes(arr):
+def moving_zeroes_day1(arr):
     # Your code here
     zeroes = 0
     newArr = []
@@ -14,7 +14,21 @@ def moving_zeroes(arr):
     for i in range (zeroes):
         newArr.append(0)
     return newArr
+
+def moving_zeroes(arr):
+    start = 0
+    end = len(arr)-1
+    for i in range(end):
+        if arr[start] == 0:
+            arr.append(0)
+            del arr[start]
+            end -=1
+        else:
+            start+=1
     
+    return arr
+
+        
 
 
 if __name__ == '__main__':
