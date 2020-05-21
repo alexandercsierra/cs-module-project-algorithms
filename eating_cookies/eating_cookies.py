@@ -2,27 +2,25 @@
 Input: an integer
 Returns: an integer
 '''
-def eating_cookies(n):
-    #for n of 3
-    # 1 1 1 - each one individually
-    # 1 2 - one and then two
-    # 2 1 - two and then one 
-    # 3 - three all at once
-
-    #n-1 + 1 - 2 times
-    #2 - n-1 +1 -2 times
-
-    #5
-    # n- 1 + 1 X 2
-
-    # if n <=1:
-    #     return 1
+def eating_cookies_day1(n):
     if n<0:
         return 0
     elif n == 0:
         return 1
     else:
         return eating_cookies(n-3) + eating_cookies(n-2) + eating_cookies(n-1)
+
+def eating_cookies(n, cache={}):
+    if n<0:
+        return 0
+    elif n == 0:
+        return 1
+    else:
+        if cache and n in cache:
+            return cache[n]
+        else:
+            cache[n] = eating_cookies(n-3) + eating_cookies(n-2) + eating_cookies(n-1)
+    return cache[n]
 
 
 if __name__ == "__main__":
