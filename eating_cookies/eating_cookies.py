@@ -15,11 +15,14 @@ def eating_cookies(n):
     #5
     # n- 1 + 1 X 2
 
-    if n <=1:
+    # if n <=1:
+    #     return 1
+    if n<0:
+        return 0
+    elif n == 0:
         return 1
     else:
-        print('recursing', n)
-        return eating_cookies((n-1))
+        return eating_cookies(n-3) + eating_cookies(n-2) + eating_cookies(n-1)
 
 
 if __name__ == "__main__":
