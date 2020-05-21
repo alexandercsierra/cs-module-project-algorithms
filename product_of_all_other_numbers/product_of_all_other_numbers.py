@@ -20,7 +20,7 @@ def product_of_all_other_numbers_day1(arr):
     
     return newArr
 
-# Can you do this in `O(n)` time with `O(1)` space _without_ using division?
+# Can you do this in `O(n)` time with `O(n)` space _without_ using division?
 
 def product_of_all_other_numbers(arr):
     products = [1 for _ in range(len(arr))]
