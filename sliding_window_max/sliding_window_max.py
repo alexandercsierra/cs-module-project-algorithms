@@ -2,7 +2,7 @@
 Input: a List of integers as well as an integer `k` representing the size of the sliding window
 Returns: a List of integers
 '''
-def sliding_window_max(nums, k):
+def sliding_window_max_day1(nums, k):
     
     #iterate through the array with two pointers
         #start will be 0
@@ -26,6 +26,26 @@ def sliding_window_max(nums, k):
     return maxes
 
 
+def sliding_window_max(nums, k):
+    maxes = []
+    current = []
+    for i in range(len(nums)):
+        start = i
+        #there are less than k elements in the current array
+        if len(current) <= k:
+            current.append(nums[i])
+            if len(current) == k:
+                maxes.append(max(current))
+                current.pop(0) 
+    return maxes
+
+
+
+
+
+  
+
+
 
 if __name__ == '__main__':
     # Use the main function here to test out your implementation 
@@ -34,3 +54,12 @@ if __name__ == '__main__':
     #expect to get [3,3,5,5,6,7]
 
     print(f"Output of sliding_window_max function is: {sliding_window_max(arr, k)}")
+
+    # arr1 = [0, 1, 2, 3, 4]
+
+    # def get_max(arr):
+    #     ph = []
+    #     ph.append(max(arr))
+    #     return ph
+
+    # print('get max', get_max(arr1))

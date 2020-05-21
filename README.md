@@ -28,8 +28,8 @@ There isn't an official prescribed order for tackling the problems, though a sub
 
  1. `single_number` ✅ ✔️
  2. `moving_zeroes` ✅ ✔️
- 3. `product_of_array_except_self` ✅
- 4. `sliding_window_max` ✅
+ 3. `product_of_array_except_self` ✅ ✔️
+ 4. `sliding_window_max` ✅ ✔️
  5. `eating_cookies` ✅ ✔️
 
 For each problem, `cd` into the directory, read the instructions for the challenge, implement your solution in the skeleton file, then test it using the provided test file.
